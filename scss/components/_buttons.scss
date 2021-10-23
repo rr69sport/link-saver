@@ -1,0 +1,18 @@
+@use "../config/vars" as *;
+
+.button {
+    width: 100px;
+    margin-left: auto;
+    padding: $unit-gap / 2;
+    border: $border;
+    
+    font-size: 100%;
+    color: $main-color;
+    border-radius: $border-radius;
+    background-color: $light-color-with-alpha;
+    cursor: pointer;
+
+    &:hover {
+    border-color: currentColor;
+}
+}

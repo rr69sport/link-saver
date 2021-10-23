@@ -1,0 +1,36 @@
+@use "../config/vars" as *;
+
+.form-app {
+    margin: $unit-gap auto;
+    padding: $unit-gap;
+    width: 100%;
+    max-width: $max-width;
+    border: $border;
+    border-radius: $border-radius;
+    color: $dark-color;
+
+    &__label {
+        color: $main-color;
+    }
+    
+    &__input {
+        padding: $unit-gap / 2;
+        background-color: $light-color-with-alpha;
+        font-size: 100%;
+        border-radius: $border-radius;
+    }
+    
+    &__input {
+        width: 100%;
+        margin-top: $unit-gap;
+        margin-bottom: $unit-gap;
+        border: $border;
+        color: $light-color;
+        outline: none;
+    }
+    
+    &__input:hover,
+    &__input:focus {
+        border-color: $main-color;
+    }
+}
