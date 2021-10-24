@@ -13,5 +13,10 @@ const getItems = () => {
     const items = toObject(ls.getItem("items")) || [];
     return items;
 }
+const clearAll = () => ls.clear();
 
-export { addItem, getItems };
+export {
+    addItem as addToLocalStorage,
+    getItems as getLocalStorageItems,
+    clearAll as clearLocalStorage
+};

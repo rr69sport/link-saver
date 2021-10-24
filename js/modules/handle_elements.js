@@ -1,13 +1,14 @@
-import { getItems } from "./handle_localstorage.js";
+import { getLocalStorageItems } from "./handle_localstorage.js";
 
 const createElement = (link, text) => {
-    return `<li class="saved-content__item">
-            <a class="saved-content__link" target="_blank" href="${link}">${text}</a>
+    return `<li class="list-of-links__wrapper">
+            <a class="list-of-links__link" href="${link}">${text}</a>
+            <span class="button list-of-links__delete">Delete</span>
         </li>`;
 };
 
 const createElements = () => {
-    const items = getItems();
+    const items = getLocalStorageItems();
 
     if (items.length === 0) return createElement("#", "No saved links");
 
@@ -15,4 +16,11 @@ const createElements = () => {
     return elements.join("");
 }
 
-export { createElement, createElements };
+const printElements = (element) => {
+    if (element) {
+        element.textContent = "";
+        element.innerHTML = createElements();
+    }
+}
+
+export { createElement, createElements, printElements };
