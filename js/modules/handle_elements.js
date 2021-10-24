@@ -1,8 +1,8 @@
 import { getLocalStorageItems } from "./handle_localstorage.js";
 
-const createElement = (id, name, link) => {
+const createElement = (id, text, link) => {
     return `<li class="list-of-links__wrapper">
-            <a class="list-of-links__link" href="${link}">${name}</a>
+            <a class="list-of-links__link" href="${link}">${text}</a>
             <span data-id="${id}" class="button delete-js list-of-links__delete">Delete</span>
         </li>`;
 };
@@ -12,14 +12,18 @@ const createElements = () => {
 
     if (items.length === 0) return createElement("", "No saved links", "#");
 
-    const elements = items.map(item => createElement(item.id, item.name, item.link));
+    const elements = items.map(item => {
+        const { id, text, link } = item;
+        return createElement(id, text, link)
+    });
+
     return elements.join("");
 }
 
-const printElements = (element) => {
-    if (element) {
-        element.textContent = "";
-        element.innerHTML = createElements();
+const printElements = (appendTo) => {
+    if (appendTo) {
+        appendTo.textContent = "";
+        appendTo.innerHTML = createElements();
     }
 }
 
