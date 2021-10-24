@@ -1,6 +1,8 @@
+import { nanoid as generateId } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js';
+
 import { printElements } from "./modules/handle_elements.js";
 
-import { addToLocalStorage, clearLocalStorage } from "./modules/handle_localstorage.js";
+import { addToLocalStorage, removeFromLocalStorage, clearLocalStorage } from "./modules/handle_localstorage.js";
 
 const formApp = document.getElementById('form-app');
 const listOfLinks = document.getElementById('list-of-links');
@@ -10,6 +12,7 @@ formApp.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const data = {
+        id: generateId(),
         name: formApp.title.value.trim(),
         link: formApp.link.value.trim()
     };
@@ -24,6 +27,14 @@ formApp.addEventListener('submit', (e) => {
 clearAll.addEventListener('click', () => {
     clearLocalStorage();
     printElements(listOfLinks);
+});
+
+listOfLinks.addEventListener('click', (e) => {
+    if (e.target.classList.contains('delete-js')) {
+        const id = e.target.dataset.id;
+        removeFromLocalStorage(id);
+        printElements(listOfLinks);
+    };
 });
 
 document.addEventListener('DOMContentLoaded', () => {

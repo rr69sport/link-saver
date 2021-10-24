@@ -3,20 +3,30 @@ const ls = localStorage;
 const toString = (item) => JSON.stringify(item);
 const toObject = (item) => JSON.parse(item);
 
-const addItem = (item) => {
+const addToLocalStorage = (item) => {
     let items = toObject(ls.getItem("items")) || [];
     items = [...items, item];
     ls.setItem("items", toString(items));
 }
 
-const getItems = () => {
+const getLocalStorageItems = () => {
     const items = toObject(ls.getItem("items")) || [];
     return items;
 }
-const clearAll = () => ls.clear();
+
+const removeFromLocalStorage = (id) => {
+    let items = toObject(ls.getItem("items")) || [];
+    if (items.length > 0) {
+        items = items.filter(item => item.id !== id);
+        ls.setItem("items", toString(items));
+    }
+}
+
+const clearLocalStorage = () => ls.clear();
 
 export {
-    addItem as addToLocalStorage,
-    getItems as getLocalStorageItems,
-    clearAll as clearLocalStorage
+    addToLocalStorage,
+    getLocalStorageItems,
+    removeFromLocalStorage,
+    clearLocalStorage
 };
