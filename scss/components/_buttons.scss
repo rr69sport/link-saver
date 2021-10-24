@@ -1,18 +1,19 @@
 @use "../config/vars" as *;
+@use "../config/placeholders" as *;
 
 .button {
     width: 100px;
     margin-left: auto;
     padding: $unit-gap / 2;
-    border: $border;
+    @extend %border;
     
     font-size: 100%;
     color: $main-color;
-    border-radius: $border-radius;
+    @extend %border-radius;
     background-color: $light-color-with-alpha;
     cursor: pointer;
 
     &:hover {
-    border-color: currentColor;
-}
+        border-color: currentColor;
+    }
 }

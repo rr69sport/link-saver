@@ -8,13 +8,7 @@
 
 body {
     margin: 0;
-    padding: 0 $unit-gap;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     font-family: sans-serif;
-    color: $light-color;
-    background-color: $dark-color;
 }
 
 img {
@@ -50,6 +44,7 @@ button {
 input,
 button {
     color: inherit;
+    outline: none;
 }
 
 ::placeholder {

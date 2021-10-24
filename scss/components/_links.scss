@@ -1,0 +1,23 @@
+@use "../config/vars" as *;
+@use "../config/placeholders" as *;
+
+.links {
+    width: 100%;
+    max-width: $max-width;
+    margin-right: auto;
+    margin-left: auto;
+
+    &__header {
+        display: grid;
+        grid-template-columns: 1fr 100px;
+        align-items: center;
+    }
+    &__clear-all {
+        border: none;
+
+        &:hover {
+            background-color: $danger-color;
+            color: $light-color;
+        }
+    }
+}
