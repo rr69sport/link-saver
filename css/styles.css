@@ -81,7 +81,7 @@ button {
   border-radius: 3px;
 }
 
-.form-app__input, .button, .list-of-links, .list-of-links__link, .form-app {
+.links__clear-all, .form-app__input, .button, .list-of-links, .list-of-links__link, .form-app {
   border: 2px solid rgba(241, 242, 243, 0.085);
 }
 
@@ -123,7 +123,10 @@ button {
   margin-bottom: 1rem;
   color: #f1f2f3;
 }
-.form-app__input:hover, .form-app__input:focus {
+.form-app__input:hover {
+  border-color: rgba(16, 205, 32, 0.75);
+}
+.form-app__input:focus {
   border-color: #10cd20;
 }
 
@@ -138,12 +141,10 @@ button {
   grid-template-columns: 1fr 100px;
   align-items: center;
 }
-.links__clear-all {
-  border: none;
-}
 .links__clear-all:hover {
-  background-color: #f00000;
   color: #f1f2f3;
+  background-color: #f00000;
+  border-color: #f00000;
 }
 
 .list-of-links {

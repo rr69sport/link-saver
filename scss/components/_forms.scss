@@ -29,7 +29,9 @@
         @extend %border;
     }
     
-    &__input:hover,
+    &__input:hover {
+        border-color: rgba($main-color, .75);
+    }
     &__input:focus {
         border-color: $main-color;
     }

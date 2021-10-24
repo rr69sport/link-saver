@@ -13,11 +13,12 @@
         align-items: center;
     }
     &__clear-all {
-        border: none;
+        @extend %border;
 
         &:hover {
-            background-color: $danger-color;
             color: $light-color;
+            background-color: $danger-color;
+            border-color: $danger-color;
         }
     }
 }
