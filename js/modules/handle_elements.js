@@ -4,6 +4,7 @@ const createElement = (id, text, link) => {
     return `<li class="list-of-links__wrapper">
             <a class="list-of-links__link" href="${link}">${text}</a>
             <span data-id="${id}" class="button delete-js list-of-links__delete">Delete</span>
+            <span class="list-of-links__saved-at"> Saved at: 20 / 11 / 2020</span>
         </li>`;
 };
 

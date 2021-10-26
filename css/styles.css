@@ -102,6 +102,19 @@ button {
   border-color: currentColor;
 }
 
+.button {
+  width: 100px;
+  margin-left: auto;
+  padding: 0.5rem;
+  font-size: 100%;
+  color: #10cd20;
+  background-color: rgba(241, 242, 243, 0.085);
+  cursor: pointer;
+}
+.button:hover {
+  border-color: currentColor;
+}
+
 .form-app {
   margin: 1rem auto;
   padding: 1rem;
@@ -159,6 +172,9 @@ button {
   align-items: center;
   padding: 1rem;
 }
+.list-of-links__wrapper:not(:last-child) {
+  border-bottom: 2px solid rgba(241, 242, 243, 0.085);
+}
 .list-of-links__link {
   display: block;
   padding: 0.5rem;
@@ -173,6 +189,11 @@ button {
   color: #f1f2f3;
   background-color: #f00000;
   border-color: #f00000;
+}
+.list-of-links__saved-at {
+  text-align: right;
+  font-size: 75%;
+  grid-column: 1/-1;
 }
 
 .author {

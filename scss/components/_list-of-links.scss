@@ -1,5 +1,5 @@
-@use "../config/vars" as *;
-@use "../config/placeholders" as *;
+@use "../config/vars"as *;
+@use "../config/placeholders"as *;
 
 .list-of-links {
     max-width: $max-width;
@@ -14,8 +14,12 @@
         grid-template-columns: 1fr 100px;
         gap: $unit-gap;
         align-items: center;
-    
+
         padding: $unit-gap;
+
+        &:not(:last-child) {
+            border-bottom: 2px solid $light-color-with-alpha;
+        }
     }
 
 
@@ -31,10 +35,17 @@
 
     &__delete {
         text-align: center;
+
         &:hover {
             color: $light-color;
             background-color: $danger-color;
             border-color: $danger-color;
         }
+    }
+
+    &__saved-at {
+        text-align: right;
+        font-size: 75%;
+        grid-column: 1 / -1;
     }
 }
