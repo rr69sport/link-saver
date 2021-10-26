@@ -13,11 +13,11 @@ formApp.addEventListener('submit', (e) => {
 
     const data = {
         id: generateId(),
-        name: formApp.title.value.trim(),
+        text: formApp.title.value.trim(),
         link: formApp.link.value.trim()
     };
 
-    if (data.name !== "" && data.link !== "") {
+    if (data.text !== "" && data.link !== "") {
         addToLocalStorage(data);
         printElements(listOfLinks);
         formApp.reset();
