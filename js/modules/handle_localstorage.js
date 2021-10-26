@@ -5,7 +5,7 @@ const toObject = (item) => JSON.parse(item);
 
 const addToLocalStorage = (item) => {
     let items = toObject(ls.getItem("items")) || [];
-    items = [...items, item];
+    items = [item, ...items];
     ls.setItem("items", toString(items));
 }
 
