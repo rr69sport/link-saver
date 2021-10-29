@@ -2,37 +2,37 @@
 @use "../config/placeholders" as *;
 
 .form-app {
-    margin: $unit-gap auto;
-    padding: $unit-gap;
-    width: 100%;
-    max-width: $max-width;
-    color: $dark-color;
-    @extend %colorized;
-    @extend %bordered;
+	margin: $unit-gap auto;
+	padding: $unit-gap;
+	width: 100%;
+	max-width: $max-width;
+	color: $dark-color;
+	@extend %colorized;
+	@extend %bordered;
 
-    &__label {
-        color: $main-color;
-    }
-    
-    &__input {
-        padding: $unit-gap / 2;
-        background-color: $light-color-with-alpha;
-        font-size: 100%;
-        @extend %border-radius;
-    }
-    
-    &__input {
-        width: 100%;
-        margin-top: $unit-gap;
-        margin-bottom: $unit-gap;
-        color: $light-color;
-        @extend %border;
-    }
-    
-    &__input:hover {
-        border-color: rgba($main-color, .75);
-    }
-    &__input:focus {
-        border-color: $main-color;
-    }
+	&__label {
+		color: $main-color;
+	}
+
+	&__input {
+		padding: $unit-gap / 2;
+		background-color: $light-color-with-alpha;
+		font-size: 100%;
+		@extend %border-radius;
+	}
+
+	&__input {
+		width: 100%;
+		margin-top: $unit-gap;
+		margin-bottom: $unit-gap;
+		color: $light-color;
+		@extend %border;
+	}
+
+	&__input:hover {
+		border-color: rgba($main-color, 0.75);
+	}
+	&__input:focus {
+		border-color: $main-color;
+	}
 }

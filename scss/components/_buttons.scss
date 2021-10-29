@@ -2,18 +2,18 @@
 @use "../config/placeholders" as *;
 
 .button {
-    width: 100px;
-    margin-left: auto;
-    padding: $unit-gap / 2;
-    @extend %border;
-    
-    font-size: 100%;
-    color: $main-color;
-    @extend %border-radius;
-    background-color: $light-color-with-alpha;
-    cursor: pointer;
+	width: 100px;
+	margin-left: auto;
+	padding: $unit-gap / 2;
+	@extend %border;
 
-    &:hover {
-        border-color: currentColor;
-    }
+	font-size: 100%;
+	color: $main-color;
+	@extend %border-radius;
+	background-color: $light-color-with-alpha;
+	cursor: pointer;
+
+	&:hover {
+		border-color: currentColor;
+	}
 }
