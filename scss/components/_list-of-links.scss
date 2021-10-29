@@ -6,8 +6,8 @@
 	margin-right: auto;
 	margin-left: auto;
 
-	@extend %bordered;
-	@extend %colorized;
+	@extend %bordered !optional;
+	@extend %colorized !optional;
 
 	&__wrapper {
 		display: grid;
@@ -25,7 +25,7 @@
 	&__link {
 		display: block;
 		padding: $unit-gap / 2;
-		@extend %bordered;
+		@extend %bordered !optional;
 	}
 
 	&__link:hover {

@@ -7,8 +7,8 @@
 	width: 100%;
 	max-width: $max-width;
 	color: $dark-color;
-	@extend %colorized;
-	@extend %bordered;
+	@extend %colorized !optional;
+	@extend %bordered !optional;
 
 	&__label {
 		color: $main-color;
@@ -18,7 +18,7 @@
 		padding: $unit-gap / 2;
 		background-color: $light-color-with-alpha;
 		font-size: 100%;
-		@extend %border-radius;
+		@extend %border-radius !optional;
 	}
 
 	&__input {
@@ -26,7 +26,7 @@
 		margin-top: $unit-gap;
 		margin-bottom: $unit-gap;
 		color: $light-color;
-		@extend %border;
+		@extend %border !optional;
 	}
 
 	&__input:hover {

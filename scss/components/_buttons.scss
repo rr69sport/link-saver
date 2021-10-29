@@ -5,11 +5,11 @@
 	width: 100px;
 	margin-left: auto;
 	padding: $unit-gap / 2;
-	@extend %border;
+	@extend %border !optional;
 
 	font-size: 100%;
 	color: $main-color;
-	@extend %border-radius;
+	@extend %border-radius !optional;
 	background-color: $light-color-with-alpha;
 	cursor: pointer;
 

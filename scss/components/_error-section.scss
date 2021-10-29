@@ -1,0 +1,9 @@
+@use "../config/vars" as *;
+
+.error-section {
+	@extend %border !optional;
+
+	&-title {
+		text-align: center;
+	}
+}

@@ -1,7 +1,7 @@
 import { nanoid as generateId } from "https://cdn.jsdelivr.net/npm/nanoid/nanoid.js";
 
 import { printElements } from "./modules/handle_elements.js";
-import { urlRegex } from "./utils/urlRegex";
+import { urlRegex } from "./utils/urlRegex.js";
 
 import { addToLocalStorage, removeFromLocalStorage, clearLocalStorage } from "./modules/handle_localstorage.js";
 
