@@ -1,3 +1,5 @@
+"use strict";
+
 import { nanoid as generateId } from "https://cdn.jsdelivr.net/npm/nanoid/nanoid.js";
 
 import { printElements } from "./modules/handle_elements.js";
