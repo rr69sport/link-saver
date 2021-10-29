@@ -1,6 +1,7 @@
 import { nanoid as generateId } from "https://cdn.jsdelivr.net/npm/nanoid/nanoid.js";
 
 import { printElements } from "./modules/handle_elements.js";
+import { urlRegex } from "./utils/urlRegex";
 
 import { addToLocalStorage, removeFromLocalStorage, clearLocalStorage } from "./modules/handle_localstorage.js";
 
@@ -17,10 +18,12 @@ formApp.addEventListener("submit", (e) => {
 		link: formApp.link.value.trim(),
 	};
 
-	if (data.text !== "" && data.link !== "") {
+	if (data.text !== "" && data.link.match(urlRegex)) {
 		addToLocalStorage(data);
 		printElements(listOfLinks);
 		formApp.reset();
+	} else {
+		alert("Please enter a valid URL");
 	}
 });
 
