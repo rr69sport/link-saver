@@ -8,6 +8,8 @@ import { addToLocalStorage, removeFromLocalStorage, clearLocalStorage } from "./
 const formApp = document.getElementById("form-app");
 const listOfLinks = document.getElementById("list-of-links");
 const clearAll = document.getElementById("clear-all");
+const errorSection = document.getElementById("error-section");
+const inputLink = document.getElementById("link-to-save");
 
 formApp.addEventListener("submit", (e) => {
 	e.preventDefault();
@@ -23,7 +25,13 @@ formApp.addEventListener("submit", (e) => {
 		printElements(listOfLinks);
 		formApp.reset();
 	} else {
-		alert("Please enter a valid URL");
+		errorSection.style.display = "inline-block";
+		inputLink.disabled = true;
+
+		setTimeout(() => {
+			errorSection.style.display = "none";
+			inputLink.disabled = false;
+		}, 1900);
 	}
 });
 

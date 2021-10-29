@@ -69,7 +69,7 @@ button {
   text-align: center;
 }
 
-.form-app__input, .button, .list-of-links, .list-of-links__link, .form-app {
+.error-section, .form-app__input, .button, .list-of-links, .list-of-links__link, .form-app {
   border-radius: 3px;
 }
 
@@ -114,12 +114,21 @@ button {
   margin-top: 1rem;
   margin-bottom: 1rem;
   color: #f1f2f3;
+  transition: opacity 0.2s ease-in-out;
 }
 .form-app__input:hover {
   border-color: rgba(16, 205, 32, 0.75);
 }
 .form-app__input:focus {
   border-color: #10cd20;
+}
+.form-app__input:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
+}
+.form-app__input:disabled:hover {
+  border-color: #f00000;
 }
 
 .links {
@@ -175,8 +184,21 @@ button {
   grid-column: 1/-1;
 }
 
+.error-section {
+  background: #e45353;
+  border: 2px solid #f00000;
+  margin: 0 auto;
+  width: 100%;
+  display: none;
+}
+@media (min-width: 500px) {
+  .error-section {
+    width: 450px;
+  }
+}
 .error-section-title {
   text-align: center;
+  font-weight: 600;
 }
 
 .author {
