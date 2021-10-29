@@ -1,5 +1,7 @@
 {
-	"liveSassCompile.settings.excludeList": ["**/node_modules/**"],
+	"liveSassCompile.settings.excludeList": [
+		"**/node_modules/**"
+	],
 	"liveSassCompile.settings.formats": [
 		{
 			"format": "compressed",
@@ -7,5 +9,5 @@
 			"savePath": "/css"
 		}
 	],
-	"editor.tabSize": 4
+	"editor.tabSize": 2
 }

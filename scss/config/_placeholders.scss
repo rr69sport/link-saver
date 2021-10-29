@@ -1,18 +1,18 @@
-@use "vars" as *;
+@use "vars"as *;
 
 %border-radius {
-	border-radius: $border-radius;
+  border-radius: $border-radius;
 }
 
 %border {
-	border: $border;
+  border: $border;
 }
 
 %bordered {
-	@extend %border !optional;
-	@extend %border-radius !optional;
+  @extend %border !optional;
+  @extend %border-radius !optional;
 }
 
 %colorized {
-	background-color: rgba($light-color, 0.025);
+  background-color: rgba($light-color, 0.025);
 }
