@@ -1,16 +1,14 @@
-"use strict";
-
 import { nanoid as generateId } from "https://cdn.jsdelivr.net/npm/nanoid/nanoid.js";
 
 import { printElements } from "./modules/handle_elements.js";
-import { urlRegex } from "./utils/urlRegex.js";
+import { validateUrl } from "./utils/validate_url.js";
 
 import { addToLocalStorage, removeFromLocalStorage, clearLocalStorage } from "./modules/handle_localstorage.js";
 
 const formApp = document.getElementById("form-app");
 const listOfLinks = document.getElementById("list-of-links");
 const clearAll = document.getElementById("clear-all");
-const errorSection = document.getElementById("error-section");
+const errorMessage = document.getElementById("error-message");
 const inputLink = document.getElementById("link-to-save");
 
 formApp.addEventListener("submit", (e) => {
@@ -22,18 +20,25 @@ formApp.addEventListener("submit", (e) => {
 		link: formApp.link.value.trim(),
 	};
 
-	if (data.text !== "" && data.link.match(urlRegex)) {
+	const isValidUrl = validateUrl(data.link);
+
+	if (data.text !== "" && isValidUrl) {
+
 		addToLocalStorage(data);
 		printElements(listOfLinks);
 		formApp.reset();
+
 	} else {
-		errorSection.style.display = "inline-block";
+
+		errorMessage.classList.add("error-message--show");
 		inputLink.disabled = true;
 
 		setTimeout(() => {
-			errorSection.style.display = "none";
+
+			errorMessage.classList.remove("error-message--show");
 			inputLink.disabled = false;
-		}, 1900);
+
+		}, 15000);
 	}
 });
 

@@ -9,8 +9,8 @@
 }
 
 %bordered {
-  @extend %border !optional;
-  @extend %border-radius !optional;
+  @extend %border;
+  @extend %border-radius;
 }
 
 %colorized {
