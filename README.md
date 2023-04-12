@@ -1,2 +1,2 @@
 # Link Saver
-![Screenshot](https://github.com/rr69sport/link-saver/blob/main/link-saver.png)
+![Screenshot](https://raw.githubusercontent.com/rr69sport/link-saver/main/link-saver.png)
